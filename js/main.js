@@ -64,53 +64,48 @@ window.addEventListener('load', () => {
   resize();
   window.addEventListener('resize', resize);
 
-  const COLORS = ['#C9A84C', '#E8D5A3', '#F5E8C0', '#A8883A', '#FFE87A'];
+  const COLORS = ['#C9A84C', '#E8D5A3', '#FFE87A', '#A8883A', '#FFF5CC'];
 
-  class Sparkle {
+  class Ember {
     constructor(randomY = false) { this.init(randomY); }
     init(randomY) {
       this.x      = Math.random() * canvas.width;
-      this.y      = randomY ? Math.random() * canvas.height : -20;
-      this.size   = Math.random() * 5 + 3;
-      this.vy     = Math.random() * 1.0 + 0.4;
-      this.vx     = (Math.random() - 0.5) * 0.6;
-      this.angle  = Math.random() * Math.PI * 2;
-      this.spin   = (Math.random() - 0.5) * 0.05;
+      this.y      = randomY ? Math.random() * canvas.height : canvas.height + 8;
+      this.size   = Math.random() * 2.0 + 0.5;
+      this.vy     = -(Math.random() * 0.65 + 0.22);
+      this.vx     = (Math.random() - 0.5) * 0.35;
       this.wobble = Math.random() * Math.PI * 2;
-      this.wSpeed = Math.random() * 0.04 + 0.01;
-      this.alpha  = Math.random() * 0.5 + 0.15;
+      this.wSpeed = Math.random() * 0.022 + 0.007;
+      this.alpha  = Math.random() * 0.55 + 0.25;
+      this.dAlpha = (Math.random() * 0.011 + 0.003) * (Math.random() > 0.5 ? 1 : -1);
+      this.glow   = Math.random() * 9 + 5;
       this.color  = COLORS[Math.floor(Math.random() * COLORS.length)];
     }
     update() {
       this.wobble += this.wSpeed;
-      this.x += Math.sin(this.wobble) * 0.6 + this.vx;
-      this.y += this.vy;
-      this.angle += this.spin;
-      if (this.y > canvas.height + 20 || this.x < -30 || this.x > canvas.width + 30) {
-        this.init(false);
-      }
+      this.x      += Math.sin(this.wobble) * 0.55 + this.vx;
+      this.y      += this.vy;
+      this.alpha  += this.dAlpha;
+      if (this.alpha > 0.85 || this.alpha < 0.06) this.dAlpha *= -1;
+      if (this.y < -12 || this.x < -12 || this.x > canvas.width + 12) this.init(false);
     }
     draw() {
       ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(this.angle);
-      ctx.globalAlpha = this.alpha;
+      ctx.globalAlpha  = this.alpha;
+      ctx.shadowBlur   = this.glow;
+      ctx.shadowColor  = this.color;
       ctx.beginPath();
-      ctx.moveTo(0, -this.size);
-      ctx.lineTo(this.size * 0.5, 0);
-      ctx.lineTo(0, this.size);
-      ctx.lineTo(-this.size * 0.5, 0);
-      ctx.closePath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = this.color;
       ctx.fill();
       ctx.restore();
     }
   }
 
-  const sparkles = Array.from({ length: 40 }, () => new Sparkle(true));
+  const embers = Array.from({ length: 55 }, () => new Ember(true));
   function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    sparkles.forEach(s => { s.update(); s.draw(); });
+    embers.forEach(e => { e.update(); e.draw(); });
     requestAnimationFrame(loop);
   }
   loop();
@@ -160,7 +155,7 @@ const crSeconds  = document.getElementById('cr-seconds');
 function pad(n) { return String(n).padStart(2, '0'); }
 
 function animateFlip(el, newVal) {
-  if (el.textContent === newVal) return;
+  if (!el || el.textContent === newVal) return;
   el.classList.add('flip-out');
   setTimeout(() => {
     el.textContent = newVal;
@@ -276,3 +271,4 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
   });
 });
+

@@ -13,6 +13,7 @@
   />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 96,50 50,96 4,50' fill='%23C9A84C'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -24,7 +25,7 @@
     <div class="nav-links" role="list">
       <a href="#detalles">Detalles</a>
       <a href="#galeria">Galería</a>
-      <a href="#itinerario">Itinerario</a>
+      <a href="#informacion">Itinerario</a>
       <a href="#rsvp">Confirmar</a>
     </div>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú">
@@ -35,7 +36,7 @@
   <div class="nav-drawer" id="nav-drawer" role="dialog">
     <a href="#detalles">Detalles</a>
     <a href="#galeria">Galería</a>
-    <a href="#itinerario">Itinerario</a>
+    <a href="#informacion">Itinerario</a>
     <a href="#rsvp">Confirmar</a>
   </div>
 
@@ -68,17 +69,14 @@
         <span class="cd-num" id="cd-days">00</span>
         <span class="cd-label">Días</span>
       </div>
-      <span class="cd-sep" aria-hidden="true">:</span>
       <div class="cd-item">
         <span class="cd-num" id="cd-hours">00</span>
         <span class="cd-label">Horas</span>
       </div>
-      <span class="cd-sep" aria-hidden="true">:</span>
       <div class="cd-item">
         <span class="cd-num" id="cd-minutes">00</span>
         <span class="cd-label">Minutos</span>
       </div>
-      <span class="cd-sep" aria-hidden="true">:</span>
       <div class="cd-item">
         <span class="cd-num" id="cd-seconds">00</span>
         <span class="cd-label">Segundos</span>
@@ -87,12 +85,47 @@
   </section>
 
   <!-- ══ CITA ══ -->
-  <section class="section section-cream" aria-label="Mensaje de los novios">
+  <section class="section section-dark" aria-label="Mensaje de los novios">
     <div class="quote-block reveal">
-      <span class="quote-mark open">&#10077;</span>
+      <div class="quote-rule" aria-hidden="true">
+        <span></span><i class="quote-icon">◈</i><span></span>
+      </div>
       <p class="quote-text">Hoy comenzamos el capítulo más hermoso de nuestra historia. Gracias por ser parte de este momento que guardaremos en el corazón para siempre.</p>
-      <span class="quote-mark close">&#10078;</span>
       <p class="quote-author">— <span data-b="names">Valentina &amp; Santiago</span></p>
+      <div class="quote-rule" aria-hidden="true">
+        <span></span><i class="quote-icon">◈</i><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HISTORIA ══ -->
+  <section id="historia" class="section section-white" aria-label="Nuestra historia">
+    <div class="section-header">
+      <p class="s-pre reveal">Dos vidas, un destino</p>
+      <h2 class="s-title reveal reveal-d1">Nuestra Historia</h2>
+      <div class="gold-bar reveal reveal-d2"></div>
+    </div>
+    <div class="story-grid">
+      <div class="story-card reveal reveal-d1">
+        <span class="story-year">2019</span>
+        <h4>El primer encuentro</h4>
+        <p>En una tarde cualquiera en Bogotá, el destino quiso que nuestros caminos se cruzaran por primera vez.</p>
+      </div>
+      <div class="story-card reveal reveal-d2">
+        <span class="story-year">2020</span>
+        <h4>El primer viaje</h4>
+        <p>Cartagena nos regaló atardeceres inolvidables y la certeza de que queríamos seguir explorando el mundo juntos.</p>
+      </div>
+      <div class="story-card reveal reveal-d3">
+        <span class="story-year">2024</span>
+        <h4>La propuesta</h4>
+        <p>Con el corazón en la mano y las montañas de testigos, Santiago le preguntó lo que ambos ya sabían.</p>
+      </div>
+      <div class="story-card reveal reveal-d4">
+        <span class="story-year">2026</span>
+        <h4>Para siempre</h4>
+        <p>El 15 de agosto diremos "sí" ante Dios y los seres queridos que hicieron posible este amor.</p>
+      </div>
     </div>
   </section>
 
@@ -112,7 +145,7 @@
         <p class="dec-time">4:00 PM</p>
         <p class="dec-venue">Catedral San Ignacio</p>
         <p class="dec-address">Cra. 7 #11-01, Bogotá</p>
-        <a href="https://maps.app.goo.gl/example" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">Ver en Maps</a>
+        <a href="https://maps.google.com/?q=Catedral+San+Ignacio,+Cra.+7+%2311-01,+Bogot%C3%A1,+Colombia" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">Ver en Maps</a>
       </div>
 
       <div class="detail-event-card reveal reveal-d2">
@@ -122,7 +155,42 @@
         <p class="dec-time">7:00 PM</p>
         <p class="dec-venue">Hacienda Los Rosales</p>
         <p class="dec-address">Vía La Calera Km 5, Bogotá</p>
-        <a href="https://maps.app.goo.gl/example" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">Ver en Maps</a>
+        <a href="https://maps.google.com/?q=V%C3%ADa+La+Calera+Km+5,+Bogot%C3%A1,+Colombia" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">Ver en Maps</a>
+      </div>
+    </div>
+
+    <div class="map-embed reveal reveal-d3">
+      <iframe
+        src="https://maps.google.com/maps?q=Catedral+San+Ignacio+Bogota+Colombia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="300" style="border:0;"
+        allowfullscreen="" loading="lazy"
+        title="Catedral San Ignacio - Bogotá">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ══ CORTEJO ══ -->
+  <section id="cortejo" class="section section-cream" aria-label="Cortejo">
+    <div class="section-header">
+      <p class="s-pre reveal">Con quienes compartimos este día</p>
+      <h2 class="s-title reveal reveal-d1">Nuestra Familia</h2>
+      <div class="gold-bar reveal reveal-d2"></div>
+    </div>
+    <div class="cortejo-grid">
+      <div class="cortejo-card reveal reveal-d1">
+        <div class="cortejo-icon">◈</div>
+        <h4>Padrinos de Boda</h4>
+        <p>Carlos Herrera<br>&amp; María García</p>
+      </div>
+      <div class="cortejo-card reveal reveal-d2">
+        <div class="cortejo-icon">◈</div>
+        <h4>Damas de Honor</h4>
+        <p>Sofía Herrera<br>Camila Morales<br>Daniela Torres</p>
+      </div>
+      <div class="cortejo-card reveal reveal-d3">
+        <div class="cortejo-icon">◈</div>
+        <h4>Chambelanes</h4>
+        <p>Mateo García<br>Andrés Ruiz<br>Felipe Castro</p>
       </div>
     </div>
   </section>
@@ -166,73 +234,59 @@
     </div>
   </section>
 
-  <!-- ══ ITINERARIO ══ -->
-  <section id="itinerario" class="section section-cream" aria-label="Itinerario">
+  <!-- ══ QR FOTOS ══ -->
+  <section id="fotos-qr" class="section section-dark" aria-label="Subí tus fotos">
     <div class="section-header">
-      <p class="s-pre reveal">El programa del día</p>
-      <h2 class="s-title reveal reveal-d1">Itinerario</h2>
+      <p class="s-pre reveal">El mejor recuerdo lo tenés vos</p>
+      <h2 class="s-title reveal reveal-d1">Compartí tus Fotos</h2>
       <div class="gold-bar reveal reveal-d2"></div>
     </div>
-
-    <div class="timeline" role="list">
-      <div class="tl-item reveal" role="listitem">
-        <div class="tl-time">4:00 PM</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-content"><h4>Ceremonia Religiosa</h4><p>Unión matrimonial en la Catedral San Ignacio</p></div>
-      </div>
-      <div class="tl-item reveal reveal-d1" role="listitem">
-        <div class="tl-time">5:30 PM</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-content"><h4>Cocktail de Bienvenida</h4><p>Brindis y aperitivos en los jardines</p></div>
-      </div>
-      <div class="tl-item reveal reveal-d2" role="listitem">
-        <div class="tl-time">7:00 PM</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-content"><h4>Cena y Primer Baile</h4><p>Banquete y primer baile de los novios</p></div>
-      </div>
-      <div class="tl-item reveal reveal-d3" role="listitem">
-        <div class="tl-time">9:00 PM</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-content"><h4>Baile y Celebración</h4><p>¡Que empiece la fiesta!</p></div>
-      </div>
-      <div class="tl-item reveal reveal-d4" role="listitem">
-        <div class="tl-time">12:00 AM</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-content"><h4>Pastel y Brindis Final</h4><p>El momento más dulce de la noche</p></div>
-      </div>
+    <div class="qr-block reveal reveal-d3">
+      <img src="Fotos/QR Fotos.png" alt="QR para subir fotos" class="qr-img" />
+      <p class="qr-text">Escaneá el código QR y subí tus fotos favoritas de la celebración. ¡Armemos juntos el álbum del gran día!</p>
     </div>
   </section>
 
-  <!-- ══ VESTIMENTA ══ -->
-  <section class="section section-dark" aria-label="Código de vestimenta">
+  <!-- ══ INFORMACIÓN ══ -->
+  <section id="informacion" class="section section-white" aria-label="Información">
     <div class="section-header">
-      <p class="s-pre reveal">Para la ocasión</p>
-      <h2 class="s-title reveal reveal-d1">Código de Vestimenta</h2>
+      <p class="s-pre reveal">Todo lo que necesitás saber</p>
+      <h2 class="s-title reveal reveal-d1">Información</h2>
       <div class="gold-bar reveal reveal-d2"></div>
     </div>
-    <div class="dress-block reveal reveal-d3">
-      <p class="dress-main">Etiqueta formal · Black Tie opcional</p>
-      <p class="dress-note">Se reservan los colores blanco, marfil y dorado exclusivamente para la novia.</p>
-    </div>
-  </section>
-
-  <!-- ══ OBSEQUIOS ══ -->
-  <section id="regalos" class="section section-white" aria-label="Obsequios">
-    <div class="section-header">
-      <p class="s-pre reveal">Tu presencia es el mejor regalo</p>
-      <h2 class="s-title reveal reveal-d1">Lista de Bodas</h2>
-      <div class="gold-bar reveal reveal-d2"></div>
-    </div>
-    <div class="gift-card reveal reveal-d3">
-      <div class="gift-icon">
-        <svg viewBox="0 0 72 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="10" width="68" height="44" rx="5" stroke="#C9A84C" stroke-width="2.5"/>
-          <path d="M2 18 L36 38 L70 18" stroke="#C9A84C" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M36 24 C36 24 27 16.5 27 11.5 C27 7.8 29.7 5.5 36 9.5 C42.3 5.5 45 7.8 45 11.5 C45 16.5 36 24 36 24Z" fill="#C9A84C" opacity="0.75"/>
-        </svg>
+    <div class="info-grid">
+      <div class="info-card reveal reveal-d1">
+        <div class="info-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4 class="info-title">Itinerario</h4>
+        <div class="info-sep"></div>
+        <ul class="info-list">
+          <li><span>4:00 PM</span>Ceremonia Religiosa</li>
+          <li><span>5:30 PM</span>Cocktail de Bienvenida</li>
+          <li><span>7:00 PM</span>Cena y Primer Baile</li>
+          <li><span>9:00 PM</span>Baile y Celebración</li>
+          <li><span>12:00 AM</span>Pastel y Brindis</li>
+        </ul>
       </div>
-      <h3>Lluvia de Sobres</h3>
-      <p>Si desean hacernos un regalo, una lluvia de sobres será muy apreciada. Con su presencia y amor, nuestra celebración será completa.</p>
+      <div class="info-card reveal reveal-d2">
+        <div class="info-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
+        </div>
+        <h4 class="info-title">Vestimenta</h4>
+        <div class="info-sep"></div>
+        <p class="info-text">Etiqueta formal · Black Tie opcional</p>
+        <p class="info-note">Se reservan el blanco, marfil y dorado exclusivamente para la novia.</p>
+      </div>
+      <div class="info-card reveal reveal-d3">
+        <div class="info-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <h4 class="info-title">Canciones</h4>
+        <div class="info-sep"></div>
+        <p class="info-text">¿Qué canción no puede faltar en la celebración?</p>
+        <a href="https://wa.me/573128622945?text=%F0%9F%8E%B5%20Quiero%20sugerir%20una%20canci%C3%B3n%20para%20la%20boda%20de%20Valentina%20%26%20Santiago%3A%20" target="_blank" rel="noopener noreferrer" class="btn-outline-pill" style="margin-top:auto">Sugerir por WhatsApp</a>
+      </div>
     </div>
   </section>
 
