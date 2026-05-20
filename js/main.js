@@ -261,6 +261,39 @@ musicBtn.addEventListener('click', () => {
 });
 
 /* ============================================================
+   MODAL RECOMENDACIONES
+   ============================================================ */
+const recomModal = document.getElementById('recom-modal');
+const btnRecom   = document.getElementById('btn-recom');
+const btnRecomClose = document.getElementById('recom-modal-close');
+
+if (btnRecom && recomModal) {
+  btnRecom.addEventListener('click', () => {
+    recomModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  btnRecomClose.addEventListener('click', () => {
+    recomModal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  recomModal.addEventListener('click', e => {
+    if (e.target === recomModal) {
+      recomModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && recomModal.classList.contains('active')) {
+      recomModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+/* ============================================================
    SMOOTH SCROLL
    ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
