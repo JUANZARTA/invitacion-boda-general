@@ -8,7 +8,7 @@ const BODA = {
   nameShort: 'Valentina & Santiago',
   phone:     '573128622945',
   hashtag:   '#ValentinaSantiago',
-  eventDate: new Date('2026-08-15T16:00:00'),
+  eventDate: new Date('2026-12-06T16:00:00'),
 };
 
 document.title = `Boda · ${BODA.names}`;

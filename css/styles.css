@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    ROOT & RESET
    ============================================================ */
 :root {
@@ -261,7 +261,7 @@ a   { text-decoration: none; color: inherit; }
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(var(--clr-shadow-rgb),.58) 0%, rgba(var(--clr-shadow-rgb),.42) 45%, rgba(var(--clr-shadow-rgb),.68) 100%),
-    url('../Fotos/img (2).png') center / cover no-repeat;
+    url('../img/fotos/img (2).png') center / cover no-repeat;
 }
 
 
@@ -909,6 +909,46 @@ a   { text-decoration: none; color: inherit; }
   color: var(--clr-gold);
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(var(--clr-gold-rgb),.2);
+}
+
+/* ============================================================
+   ACTION BUTTONS — Calendar & Share
+   ============================================================ */
+.btn-calendar,
+.btn-share {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem 1.4rem;
+  border-radius: 3rem;
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1.5px solid var(--clr-gold);
+  color: var(--clr-gold);
+  background: transparent;
+  transition: all var(--t);
+  margin: 0 .35rem .75rem;
+}
+.btn-calendar:hover,
+.btn-share:hover {
+  background: var(--clr-gold);
+  color: var(--clr-black);
+  transform: translateY(-2px);
+}
+.btn-calendar svg,
+.btn-share svg { flex-shrink: 0; }
+@media (max-width: 480px) {
+  .btn-calendar,
+  .btn-share {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 0 .6rem;
+  }
 }
 
 /* ============================================================
